@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.streamlit/secrets.toml
+data/*.sqlite3
+*.egg-info/
