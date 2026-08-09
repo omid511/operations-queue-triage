@@ -1,8 +1,12 @@
 name: Operations Queue Triage CI
 
 on:
+  workflow_dispatch:
   push:
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   test-and-smoke:
@@ -28,6 +32,11 @@ jobs:
         run: ruff check app.py src tests scripts
       - name: Build package artifact
         run: python -m pip wheel --no-deps --no-build-isolation . --wheel-dir dist
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: operations-queue-triage-wheel
+          path: dist/*.whl
       - name: Unit tests
         run: pytest -q
       - name: Synthetic fixture smoke check

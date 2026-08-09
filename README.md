@@ -1,5 +1,8 @@
 # Operations Queue Triage
 
+[![CI](https://github.com/omid511/operations-queue-triage/actions/workflows/ci.yml/badge.svg)](https://github.com/omid511/operations-queue-triage/actions/workflows/ci.yml)
+[![Issues](https://img.shields.io/github/issues/omid511/operations-queue-triage)](https://github.com/omid511/operations-queue-triage/issues)
+
 Operations Queue Triage is a local-first operations decision system: import a
 ticket export, map and validate its columns, create a reproducible SLA
 snapshot, triage the queue, record an auditable decision, and inspect what

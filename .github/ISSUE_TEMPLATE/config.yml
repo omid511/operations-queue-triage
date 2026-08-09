@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the demo boundary first
+    url: https://github.com/omid511/operations-queue-triage#scope-and-next-risks
+    about: This public demo uses synthetic data and local SQLite; read the documented limits before reporting production behavior.
