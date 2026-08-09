@@ -7,6 +7,8 @@ on:
 jobs:
   test-and-smoke:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
