@@ -101,7 +101,12 @@ python scripts/smoke_check.py
 GitHub Actions installs pinned Python 3.11 dependencies, compiles the project,
 runs the public API type contract, Ruff, tests, the fixture + SQLite replay
 smoke check, builds a wheel, and starts Streamlit to verify `/_stcore/health`.
-The workflow is `.github/workflows/ci.yml`.
+The workflow is `.github/workflows/ci.yml`. Dependabot reviews dependency
+changes, and CodeQL scans Python on pull requests, pushes to `main`, and a
+weekly schedule.
+
+Published `v*` GitHub releases re-build the wheel and attach a SHA-256
+checksum. Verify it with `sha256sum -c operations-queue-triage.whl.sha256`.
 
 ## Streamlit Community Cloud
 

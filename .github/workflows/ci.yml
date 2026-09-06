@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: operations-queue-triage-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   dependency-review:
     if: github.event_name == 'pull_request'
@@ -47,6 +51,7 @@ jobs:
         with:
           name: operations-queue-triage-wheel
           path: dist/*.whl
+          if-no-files-found: error
       - name: Unit tests
         run: pytest -q
       - name: Synthetic fixture smoke check

@@ -25,3 +25,9 @@ GitHub Actions use maintained major tags such as `checkout@v4`,
 without silently changing the workflow interface. Review major-tag upgrades
 deliberately, and keep each workflow/job permission set limited to the API
 access it needs.
+
+## Releases
+
+Publish a GitHub release from a `v*` tag. The release workflow rebuilds the
+wheel and uploads a SHA-256 checksum with it. Keep release output reproducible
+from the tagged source; do not attach local build artifacts manually.
